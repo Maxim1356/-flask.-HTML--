@@ -7,9 +7,7 @@ app = Flask(__name__)
 def title():
     return "Missiya"
 
-
-@app.route('/image_mars')
-def return_sample_page():
+def return_sample_page(n):
     return f'''<!doctype html>
                 <html lang="en">
                   <head>
@@ -22,17 +20,30 @@ def return_sample_page():
                   </head>
                   <body>
                     <h1>Жди нас, Марс!</h1>
-                    <img src="{url_for('static', filename='static/img/mars.png')}" 
+                    <img src="{url_for('static', filename='img/mars.png')}" 
            alt="терпи">
-
-                    <div class="alert alert-success" role="alert">
-                        <p>Вот она какая, красная планета.</p>
+                    <div class="alert alert-primary" role="alert">
+                      На ней много необходимых ресурсов;
+                    </div>
+                    <div class="alert alert-primary" role="uio">
+                      На ней много необходимых ресурсов;
+                    </div>
+                    <div class="alert alert-primary" role="uio">
+                      На ней много необходимых ресурсов;
+                    </div>
+                    <div class="alert alert-primary" role="uio">
+                      На ней много необходимых ресурсов;
                     </div>
                     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
                     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
                     crossorigin="anonymous"></script>
                   </body>
                 </html>'''
+
+
+@app.route('/choice/<planet_name>')
+def choice(planet_name):
+    return return_sample_page(planet_name)
 
 
 if __name__ == '__main__':
