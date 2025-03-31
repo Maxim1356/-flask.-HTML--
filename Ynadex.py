@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route('/')
 def title():
     return "Missiya"
-#qwerty
+#qwerty2
 
 @app.route('/image_mars')
 def return_sample_page():
